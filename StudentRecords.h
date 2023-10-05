@@ -33,9 +33,27 @@ namespace std {
             first = first->deleteStudent(id);
             numbrStudents--;
         }
+        void deleteStudent(){
+            int del;
+            cout << "\n boa du willst doch safe wen loeschen";
+            cin >> del;
+            deleteStudent(del);
+        }
         void printall(){
             if (numbrStudents == 0) return;
             first->print();
+        }
+        void newStuudent(){
+            char initial;
+            int id;
+            float grade;
+            cout << "\n gib mal den vornamen von nem neuen student";
+            cin >> initial;
+            cout << "gib mal dessen id";
+            cin >> id;
+            cout << "gib mal den note";
+            cin >> grade;
+            addStudent(initial,id,grade);
         }
 
 

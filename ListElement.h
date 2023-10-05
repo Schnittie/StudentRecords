@@ -14,6 +14,7 @@ namespace std {
         Student* content;
         ListElement* next;
     public:
+
         ListElement(Student* student){
             content = student;
             next = nullptr;
@@ -27,6 +28,12 @@ namespace std {
             next = next->deleteStudent(id);
             return this;
         }
+        ~ListElement() {
+            delete content;
+            content = nullptr;
+            next = nullptr;
+        }
+
         void addStudent(Student* student){
             if (next == nullptr){
                 ListElement* listElement = new ListElement(student);
@@ -49,6 +56,7 @@ namespace std {
             if (next == nullptr) return;
             next->print();
         }
+
     };
 
 } // std
